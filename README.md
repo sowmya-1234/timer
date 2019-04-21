@@ -4,10 +4,10 @@ A Javascript application for a countdown timer
 
 ## Features
 What is addressed in this version?
-1. Countdown Timer
+1. Countdown Timer:
 - Takes the input from the user for the count down time (hh:mm:ss)
 - Supports Start/Stop , Pause/Resume, Laps/Clear laps in the clock timer
-2. Laps/Threshold
+2. Laps/Threshold:
 - Threshold settings should be shown and allowed  to be configured by user , by default it is 00:00:00
 - Add Lap when Lap Button or spacebar is pressed
 - if current lap exceeds the threshold limit, the specific entry would be shown in ‘red’
@@ -15,7 +15,7 @@ What is addressed in this version?
 - Option to clear the Laps is provided
 - Each lap also has a delete icon for removing individual lap
 - All Laps could be seen while adding Laps
-3. Stop Button
+3. Stop Button:
 Stop Button would not allow Pause/Resume or Laps anymore
 User needs to refresh the page or click on Refresh button 
 4. Supported in Chrome Browser
@@ -23,9 +23,9 @@ User needs to refresh the page or click on Refresh button
 Features planned in future?
 - If backspace key is pressed and a lap is ongoing, a confirmation would be asked to the user if the ongoing lap should be clubbed with the previous lap.
 - Stop Button once pressed all laps details will be shown as grid.  Till that time only current lap details will be shown.
-- Stop button to allow negative count
+- Allow to show negative count in the timer
 - Resuming from current state
-- Support in all browsers
+- Multibrowser support
 - Support for Redex (state maintenance)
 
 ## Display
