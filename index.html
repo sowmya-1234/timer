@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Countdown Timer</title>
+	<meta name="description" content="A CountDown Timer with laps">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="CountdownTimer" />
+	<meta name="theme-color" content="#e5e5e5" />
+	<meta name="mobile-web-app-capable" content="yes" />
+
+	<link rel="manifest" href="./manifest.json">
+	<link rel="stylesheet" href="countdowntimer.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="countdowntimer.js"></script>
+	<script src="script.js"></script>
+
+</head>
+
+<body>
+
+	<header>
+		<h2>Countdown Timer</h2>
+	</header>
+
+	<main>
+		<section>
+			<h2>Enter Timer Start(hh/mm/ss)</h2>
+			hh:<input type="number" id="timerHrs" min="0" max="23" value="00"></input>
+			mm:<input type="number" id="timerMin" min="0" max="59" value="00"></input>
+			ss:<input type="number" id="timerSec" min="0" max="59" value="00"></input>
+			<h2>Enter Lap Threshold(hh/mm/ss)</h2>
+			hh:<input type="number" id="thresholdHrs" min="0" max="23" value="00"></input>
+			mm:<input type="number" id="thresholdMin" min="0" max="59" value="00"></input>
+			ss:<input type="number" id="thresholdSec" min="0" max="59" value="00"></input>
+		</section>
+		<section>
+			<h2>Timer</h2>
+			<div id="countdowntimerDiv"></div>
+		</section>
+		<section>
+			<ul id="countdowntimerControlsUl"></ul>
+		</section>
+		<section>
+			<h2 id="lapsHeader">Laps     (Lap Time(hh:mm:ss:ms) / LapTime Diff(ms))</h2>
+			<ul id="countdowntimerLapsUl"></ul>
+		</section>
+	</main>
+</body>
+
+</html>

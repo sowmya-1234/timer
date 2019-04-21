@@ -1,0 +1,390 @@
+@media only screen and (max-width: 519px) {
+    :root {
+        --counttimer-digit-divider-height: 50px;
+        --counttimer-padding: 0px;
+        --counttimer-controls-grid-template-columns: 2;
+        --counttimer-controls-grid-gap: 1rem;
+        --display-keyboard-shortcut: none;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 520px) and (max-width: 959px) {
+    :root {
+        --counttimer-digit-divider-height: 71px;
+        --counttimer-controls-grid-template-columns: 2;
+        --counttimer-controls-grid-gap: 1rem;
+        --counttimer-padding: 10px;
+        --display-keyboard-shortcut: none;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 960px) {
+    :root {
+        --counttimer-digit-divider-height: 120px;
+        --counttimer-controls-grid-template-columns: 5;
+        --counttimer-controls-grid-gap: 2rem;
+        --counttimer-padding: 20px;
+        --display-keyboard-shortcut: inline-block;
+    }
+}
+
+:root {
+    --counttimer-digit-divider-color: #000;
+}
+
+div#counttimer_digits_area {
+    text-align: center;
+    padding: var(--counttimer-padding);
+    background: white;
+    margin: auto;
+    max-width: 800px;
+}
+
+ul#counttimer_controls_area {
+    margin: auto;
+    padding: 0;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(var(--counttimer-controls-grid-template-columns), 0.2fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: var(--counttimer-controls-grid-gap);
+    grid-row-gap: var(--counttimer-controls-grid-gap);
+    align-items: center;
+}
+
+/**
+ * Buttons
+ */
+ul#counttimer_controls_area>button {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+    color: #000;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding: 1rem 0.5rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+}
+
+ul#counttimer_controls_area>button:hover,
+ul#counttimer_controls_area>button:focus {
+    transition: background-color 0.2s, color 0.2s;
+    color: #fff;
+    outline: 0;
+}
+
+ul#counttimer_controls_area>button#start_stop:hover,
+ul#counttimer_controls_area>button#start_stop:focus {
+    background-color: rgb(212, 0, 0);
+}
+
+ul#counttimer_controls_area>button#restart:hover,
+ul#counttimer_controls_area>button#restart:focus {
+    background-color: rgb(0, 109, 212);
+}
+
+ul#counttimer_controls_area>button#add_lap:hover,
+ul#counttimer_controls_area>button#add_lap:focus {
+    background-color: rgb(66, 146, 0);
+}
+
+ul#counttimer_controls_area>button#clear_laps:hover,
+ul#counttimer_controls_area>button#clear_laps:focus {
+    background-color: rgb(137, 0, 172);
+}
+
+ul#counttimer_controls_area>button#reset:hover,
+ul#counttimer_controls_area>button#reset:focus {
+    background-color: rgb(66, 146, 0);
+}
+
+ul#counttimer_controls_area>button>kbd {
+    display: var(--display-keyboard-shortcut);
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+/**
+ * Laps
+ */
+ul#counttimer_laps_area {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#counttimer_laps_area>li {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 4px;
+    margin: 0.5rem auto;
+    width: 100%;
+    text-align: center;
+    color: #030303;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container {
+    display: block;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>time {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross {
+    margin-left: 1rem;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite {
+    margin-right: 1rem;
+    opacity: 0;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:hover {
+    opacity: 1;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:before,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:after,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:before,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:after {
+    position: absolute;
+    content: ' ';
+    height: 1.5rem;
+    width: 2px;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:before,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:after {
+    background-color: #333;
+
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:before,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:after {
+    background-color: transparent;
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:before,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:before {
+    transform: rotate(45deg);
+}
+
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross:after,
+ul#counttimer_laps_area>li>div.counttimer_time_container>div.counttimer-remove-lap-cross-opposite:after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+/**
+ * Divider
+ *
+ *   (0)
+ *         x1 (hour - min) x1 (min -sec) x1 (sec -millisec)
+ *   (1)
+ *
+ */
+
+div#counttimer_digits_area>div.counttimer_digits_divider {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    height: var(--counttimer-digit-divider-height);
+    width: calc(var(--counttimer-digit-divider-height) / 10);
+    margin: calc(var(--counttimer-digit-divider-height) / 20);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_divider>span {
+    position: absolute;
+    background: var(--counttimer-digit-divider-color);
+    height: calc(var(--counttimer-digit-divider-height) / 20);
+    width: calc(var(--counttimer-digit-divider-height) / 20);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_divider>span.counttimer_digits_divider_0 {
+    top: calc(var(--counttimer-digit-divider-height) / 6 * 2 - (var(--counttimer-digit-divider-height) / 10 / 2));
+}
+
+div#counttimer_digits_area>div.counttimer_digits_divider>span.counttimer_digits_divider_1 {
+    top: calc(var(--counttimer-digit-divider-height) / 6 * 4 - (var(--counttimer-digit-divider-height) / 10 / 2));
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element {
+    position: relative;
+    display: inline-block;
+    width: calc(var(--counttimer-digit-divider-height) / 2);
+    height: var(--counttimer-digit-divider-height);
+    margin: calc(var(--counttimer-digit-divider-height) / 20);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element>span {
+    position: absolute;
+    background: transparent;
+}
+
+/* All the horizontal lines (0,1,2) [width, height] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_2 {
+    width: calc(var(--counttimer-digit-divider-height) / 2 - 2 * var(--counttimer-digit-divider-height) / 20);
+    height: calc(var(--counttimer-digit-divider-height) / 20);
+    left: calc(((var(--counttimer-digit-divider-height) / 2) - var(--counttimer-digit-element-length)) / 2);
+}
+
+/* All the vertical lines (3,4,5,6) [width, height] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_5,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_6 {
+    width: calc(var(--counttimer-digit-divider-height) / 20);
+    height: calc(var(--counttimer-digit-divider-height) / 2 - 1.5 * var(--counttimer-digit-divider-height) / 20);
+}
+
+/* All the horizontal lines (0,1,2) [orientation x] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_2 {
+    left: calc((var(--counttimer-digit-divider-height) / 2 - var(--counttimer-digit-divider-height) / 2 / 5 * 4) / 2);
+}
+
+/* Horizontal line 0 [orientation y] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_0 {
+    top: 0;
+}
+
+/* Horizontal line 1 [orientation y] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_1 {
+    top: calc(var(--counttimer-digit-divider-height) / 2 - 0.5 * var(--counttimer-digit-divider-height) / 20);
+}
+
+/* Horizontal line 2 [orientation y] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_2 {
+    bottom: 0;
+}
+
+
+/* Vertical lines (3,5) [orientation x] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_5 {
+    left: 0;
+}
+
+/* Vertical lines (4,6) [orientation x] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_6 {
+    right: 0;
+}
+
+/* Vertical lines (3,4) [orientation y] */
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_4 {
+    top: calc(var(--counttimer-digit-divider-height) / 20);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_5,
+div#counttimer_digits_area>div.counttimer_digits_element>span.counttimer_digits_element_6 {
+    bottom: calc(var(--counttimer-digit-divider-height) / 20);
+}
+
+
+/**
+ * Color formatting for the digits
+ */
+
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_5,
+div#counttimer_digits_area>div.counttimer_digits_element.zero>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.one>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.one>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.two>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.two>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.two>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.two>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.two>span.counttimer_digits_element_5 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.three>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.three>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.three>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.three>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.three>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.four>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.four>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element.four>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.four>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.five>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.five>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.five>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.five>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element.five>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_5,
+div#counttimer_digits_area>div.counttimer_digits_element.six>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.seven>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.seven>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.seven>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.eight>span {
+    background: var(--counttimer-digit-divider-color);
+}
+
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_0,
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_1,
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_2,
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_3,
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_4,
+div#counttimer_digits_area>div.counttimer_digits_element.nine>span.counttimer_digits_element_6 {
+    background: var(--counttimer-digit-divider-color);
+}
