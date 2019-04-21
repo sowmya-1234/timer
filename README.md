@@ -26,7 +26,7 @@ Features planned in future?
 - Allow to show negative count in the timer
 - Resuming from current state
 - Multibrowser support
-- Support for Redex (state maintenance)
+- Support for Redux (state maintenance)
 
 ## Display
 - This repository contains the countdown timer using an Nginx container inside Docker. The code for the site is contained in index.html, and the Nginx config is in default.conf. 
