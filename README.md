@@ -16,8 +16,8 @@ What is addressed in this version?
 - Each lap also has a delete icon for removing individual lap
 - All Laps could be seen while adding Laps
 3. Stop Button:
-Stop Button would not allow Pause/Resume or Laps anymore
-User needs to refresh the page or click on Refresh button 
+- Stop Button would not allow Pause/Resume or Laps anymore
+- User needs to refresh the page or click on Refresh button 
 4. Supported in Chrome Browser
 
 Features planned in future?
