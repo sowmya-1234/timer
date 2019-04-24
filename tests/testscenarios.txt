@@ -1,0 +1,57 @@
+Test 1 :
+Launch the Counterdown timer using http://localhost:8080/.
+Expected Result:
+It should show the 
+- Timer Start
+- Lap Threshold
+- Default Timer set to 00:00:00:000
+- Start/Pause/Lap/Clear Laps/Reset Buttons
+Actual Result:
+Pass
+
+Test 2 :
+Provide value of 3 min in the Timer Start, and provide 2 seconds as Threshold value
+Now Click on the Start Button. Press space bar as the timer is progressing to see the laps
+
+Expected Result:
+The Timer should start from 3 min.
+Pressing space bar should should show the Lap Time/Lap Time diff between subsequent laps.
+If the lap Time Difference exceeds the threshold time , the specific lap entry should be shown in red.
+
+Actual Result
+Pass
+
+Test 3:
+Pause/Resume Button functionality
+
+Expected Result:
+Pause/Resume Button should pause or resume the timer as it is progressing
+
+Actual Result:
+Pass
+
+Test 4: 
+Reset button functionality
+
+Expected Result:
+Reset button should reset all inputs and button states
+
+Actual Result:
+Pass
+
+
+Test 5: 
+Clear Laps button functionality
+
+Expected result:
+Clear Laps should clear all the laps shown at any point of time
+
+Actual result
+Pass
+
+
+
+
+
+
+
